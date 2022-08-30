@@ -179,6 +179,8 @@ class Ford extends utils.Adapter {
             });
     }
     async getVehicles() {
+        this.log.debug("Beginning of getVehicles");
+        this.log.debug("session.access_token: " + this.session.access_token);
         const headers = {
             "content-type": "application/json",
             "application-id": "1E8C7794-FF5F-49BC-9596-A1E0C86C5B19",
@@ -282,6 +284,7 @@ class Ford extends utils.Adapter {
                 this.log.error(error);
                 error.response && this.log.error(JSON.stringify(error.response.data));
             });
+        this.log.debug("End of getVehicles");
     }
 
     async updateVehicles() {
