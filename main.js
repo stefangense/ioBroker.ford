@@ -119,7 +119,8 @@ class Ford extends utils.Adapter {
         if (!response) {
             return;
         }
-
+        
+        this.log.debug("response.code in login:" + response.code);
         const midToken = await this.requestClient({
             method: "post",
             url: "https://sso.ci.ford.com/oidc/endpoint/default/token",
